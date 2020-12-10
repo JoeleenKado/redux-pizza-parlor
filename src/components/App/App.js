@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import PizzaListItem from '../PizzaListItem/PizzaListItem';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <br/>
         <img src="images/pizza_photo.png"/>
         <p>Pizza is great.</p>
+        <PizzaListItem/>
       </div>
     );
   }
