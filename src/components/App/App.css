@@ -21,3 +21,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.card {
+  border: 1px solid darkblue;
+  border-radius: .5em;
+  display: inline-block;
+  width: 300px;
+  height: 250px;
+  text-align: center;
+  padding: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
