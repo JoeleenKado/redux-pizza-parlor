@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PizzaList from '../PizzaList/PizzaList';
+import CustomerForm from '../CustomerForm/CustomerForm';
+import Checkout from '../Checkout/Checkout';
+
 
 class App extends Component {
 
@@ -32,6 +37,17 @@ class App extends Component {
         <img src="images/pizza_photo.png"/>
         <p>Pizza is great.</p>
         {JSON.stringify()}
+        <Router>
+          <nav>
+            <ul>
+              <li><Link to="/">Order</Link></li>
+              <li><Link to="/CustomerForm"></Link></li>
+            </ul>
+          </nav>
+          <Route exact path="/" component={PizzaList} />
+          <Route exact path="/CustomerForm" component={CustomerForm} />
+          <Route exact path="/Checkout" component={Checkout} />
+        </Router>
       </div>
     );
   }

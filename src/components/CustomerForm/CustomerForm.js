@@ -35,7 +35,7 @@ class CustomerForm extends Component {
     }
 
     addCustomer = () => {
-
+        this.props.history.push('/Checkout')
     }
 
     render() {
@@ -44,17 +44,20 @@ class CustomerForm extends Component {
                 <h2>Your Information</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name: </label>
-                    <input required placeholder="Name" type="text"></input>
+                    <input required placeholder="Name" type="text" />
                     <label>Street Address: </label>
-                    <input required placeholder="Street Address" type="text"></input>
+                    <input required placeholder="Street Address" type="text" />
                     <label>Zip Code</label>
-                    <input required placeholder="Zip Code"></input>
+                    <input required placeholder="Zip Code" />
                     <label>Total</label>
-                    <input required placeholder="Total">$</input>
-                    <label>Pickup or Delivery?</label>
-                    <input onClick={this.typeConditionalPickup} type="checkbox" id="pickup" name="Pickup" value={this.state.pickup}></input>
-                    <input onClick={this.typeConditionalPickup} type="checkbox" id="delivery" name="Delivery" value={this.state.delivery}></input>
+                    <label>$</label>
+                    <input required placeholder="Total" />
+                    <label>Pickup?</label>
+                    <input onClick={this.typeConditionalPickup} type="checkbox" id="pickup" name="Pickup" value={this.state.pickup} />
+                    <label>Delivery?</label>
+                    <input onClick={this.typeConditionalPickup} type="checkbox" id="delivery" name="Delivery" value={this.state.delivery} />
                     <p>Delivery or Pickup: {this.state.type.pickup ? 'Pickup' : 'Delivery'}</p>
+                    <button onClick={this.addCustomer}>Next</button>
                 </form>
             </section>
         )
