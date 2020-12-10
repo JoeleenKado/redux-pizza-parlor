@@ -32,3 +32,4 @@ CREATE TABLE "line_item" (
 	"pizza_id" INT REFERENCES "pizza",
 	"quantity" INT NOT NULL
 );
+ 

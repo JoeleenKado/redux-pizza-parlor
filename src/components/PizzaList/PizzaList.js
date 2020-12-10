@@ -1,67 +1,29 @@
-// ArtistList.js
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import React, { Component } from 'react';
-import ArtistListItem from '../ArtistListItem/ArtistListItem';
-//render from reducer
-class ArtistList extends Component {
-  refreshPizzas = () => {
-    // just like $.ajax()
-    axios({
-      method: 'GET',
-      url: '/artist'
-    }).then((response) => {
-      console.log(response);
-    {/*  // response.data will be the array of artists
-      // this.setState({
-      //   artists: response.data, 
-      //   });*/}
-        this.props.dispatch({type: 'ADD_ARTIST', payload: response.data })
+import React, { Component } from "react";
+import PizzaItem from "../PizzaItem/PizzaItem";
+class PizzaList extends Component {
+  clickHandler = () => {
+    this.props.history.push("/customer-info");
+  };
 
-    });
+  render() {
+    return (
+      <div className="pizzaList">
+        <h2>Pizza-Pizza!</h2>
+        <ul>
+          {this.props.reduxStore.pizzaList.map((pizza, index) => {
+            return <PizzaItem key={index} pizza={pizza.id} />;
+          })}
+        </ul>
+        <button onClick={this.clickHandler}>Next</button>
+      </div>
+    );
   }
-  
-        createPizzaList() {
-        let artistListForDom = [];
-        console.log(this.props.reduxState);
-        for(let i = 0; i < this.props.reduxState.pizzaReducer.length; i += 1) {
-            let artist = this.props.reduxState.pizzaReducer[i];
-            console.log(artist);
-            let pizzaRow = (<PizzaListItem key={i} refreshPizzas={this.props.refreshPizzas} pizza={pizza} />);
-            artistListForDom.push(artistRow);
-        }
-        return artistListForDom;
-    }
-
-    render() {
-        return (
-            <div>
-                <table>
-                    <tbody>
-                        {this.createPizzaList()}
-                    </tbody>
-                </table>
-            </div>
-        )
-    }
 }
 
-const putReduxStateOnProps = (reduxState) => ({
-  reduxState
+const putReduxStateOnProps = (reduxStore) => ({
+  reduxStore,
 });
 
-
 export default connect(putReduxStateOnProps)(PizzaList);
-
-
-
-
-
-
-
-
-
-
-
-
-  
