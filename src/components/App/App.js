@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import CustomerForm from '../CustomerForm/CustomerForm';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -17,4 +20,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);
