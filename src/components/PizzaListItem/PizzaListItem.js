@@ -36,22 +36,18 @@ class PizzaListItem extends Component {
 
         return (
             <div className="card">
-              <div>
-                  <img  src={this.props.pizza.image_path} alt={this.props.pizza.description}/>
-              </div>
-
+                <img width="135px" height="135px" src={this.props.pizza.image_path} alt={this.props.pizza.description}/>
                 <h2>{this.props.pizza.name}</h2>
-            <p>description: {this.props.pizza.description}</p>
-            <p>price: {this.props.pizza.price}</p>
-            <section>
-            { this.state.showAdd && // if this part is false, the next part won't show
-                `Name: ${this.props.pizza.name}` } 
-            </section> 
+                <p>description: {this.props.pizza.description}</p>
+                <p>price: {this.props.pizza.price}</p>
+                <section>
+                    { this.state.showAdd && // if this part is false, the next part won't show
+                        `Name: ${this.props.pizza.name}` } 
+                </section> 
 
                 <button onClick={this.togglAddRemove}>
                     {this.state.showAdd ? `Add Pizza!` : `Remove Pizza!`}
                 </button>
-
             </div>
         )
     }

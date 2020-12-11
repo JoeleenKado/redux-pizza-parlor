@@ -34,13 +34,11 @@ class App extends Component {
           <h1 className="App-title">Prime Pizza</h1>
         </header>
         <br/>
-        <p>Pizza is great.</p>
         {JSON.stringify()}
         <Router>
           <nav>
             <ul>
               <li><Link to="/">Order</Link></li>
-              <li><Link to="/CustomerForm"></Link></li>
             </ul>
           </nav>
           <Route exact path="/" component={PizzaList} />
