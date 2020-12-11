@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 class CustomerForm extends Component {
 
+
     state = {
         customer_name: '',
         street_address: '',
@@ -36,6 +37,10 @@ class CustomerForm extends Component {
 
     addCustomer = () => {
         this.props.history.push('/Checkout')
+    }
+
+    handleSubmit = () => {
+        
     }
 
     render() {
