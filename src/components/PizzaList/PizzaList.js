@@ -12,7 +12,7 @@ class PizzaList extends Component {
         <h2>Pizza-Pizza!</h2>
         <ul>
           {this.props.reduxStore.pizzaList.map((pizza, index) => {
-            return <PizzaListItem key={index} pizza={pizza.id} />;
+            return <PizzaListItem key={index} pizza={pizza} />;
           })}
         </ul>
         <button onClick={this.clickHandler}>Next</button>
